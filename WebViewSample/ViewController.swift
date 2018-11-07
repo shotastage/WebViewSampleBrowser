@@ -24,7 +24,7 @@ class ViewController: UIViewController, WKUIDelegate {
         webView.allowsBackForwardNavigationGestures = true
         
         
-        let initialURL: String = "https://twitter.com/"
+        let initialURL: String = "https://google.co.jp/"
         
         let encodedUrlString = initialURL.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
         
@@ -36,7 +36,7 @@ class ViewController: UIViewController, WKUIDelegate {
         
         self.view.addSubview(webView)
         provideURLBar()
-
+        provideToolbar()
     }
 
     
@@ -50,16 +50,25 @@ class ViewController: UIViewController, WKUIDelegate {
 
 
 extension ViewController {
+
+    @objc func back(sender: UIButton){
+        self.webView.goBack()
+    }
     
-    fileprivate func provideURLBar() {
-        let bar: UIInputView!
+    @objc func forward(sender: UIButton){
+        self.webView.goForward()
+    }
+    
+    @objc func share(sender: UIButton) {
+        // Share
+        let alert: UIAlertController = UIAlertController(title: "Fatal error", message: "Does not implemented!", preferredStyle:  UIAlertController.Style.alert)
         
-        bar = UIInputView(frame: CGRect(
-            x: 0, y: 0,
-            width: self.view.bounds.width,
-            height: 20
-        ))
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+            (action: UIAlertAction!) -> Void in
+        })
         
-        self.view.bringSubviewToFront(bar)
+        alert.addAction(defaultAction)
+        
+        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
     }
 }
