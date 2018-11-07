@@ -11,40 +11,63 @@ import UIKit
 
 extension ViewController {
     func provideToolbar() {
-        let toolbar = UIToolbar(
-            frame: CGRect(x: 0, y: self.view.bounds.size.height - 44,
-                          width:self.view.bounds.size.width,
-                          height:40.0))
-        toolbar.layer.position = CGPoint(x: self.view.bounds.width / 2, y: self.view.bounds.height - 20.0)
+        
+        var toolbarHeight: CGFloat = 40
+        
+        /// Safe area calculation
+        if UIApplication.shared.windows[0].safeAreaInsets.bottom != 0 {
+            toolbarHeight += UIApplication.shared.windows[0].safeAreaInsets.bottom
+        }
+        
+        let toolbar = UIToolbar(frame: CGRect(
+                                x: 0,
+                                y: self.view.bounds.size.height - 44,
+                                width: self.view.bounds.size.width,
+                                height: toolbarHeight))
+        
+        toolbar.layer.position = CGPoint(
+                                x: self.view.bounds.width / 2,
+                                y: self.view.bounds.height - (toolbarHeight / 2))
+
         toolbar.barStyle = .default
         toolbar.tintColor = UIColor.white
         
-        // back
+        /// back
         let backBtn = provideToolbarItem(icon: "back", action: #selector(back))
         
-        // forward
+        /// forward
         let forwardBtn = provideToolbarItem(icon: "forward", action: #selector(forward))
         
-        // share
+        /// share
         let tabBtn = provideToolbarItem(icon: "back", action: #selector(share))
         
-        // spacer
+        /// spacer
         let flexibleItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
     
-        // Toolbar Items
+        /// Toolbar Items
         toolbar.items = [backBtn, flexibleItem, forwardBtn, flexibleItem, flexibleItem, tabBtn]
+        
         self.view.addSubview(toolbar)
     }
-    
+}
+
+
+extension ViewController {
     
     private func provideToolbarItem(icon: String, action: Selector, size: CGFloat = 24) -> UIBarButtonItem {
-        
+
         let newButton = UIButton(frame: CGRect(x: 0, y: 0, width: size, height: size))
+        
+        /// Add constraints
         newButton.widthAnchor.constraint(equalToConstant: size).isActive = true
         newButton.heightAnchor.constraint(equalToConstant: size).isActive = true
-        newButton.setBackgroundImage(UIImage(named: icon), for: .normal)
-        newButton.addTarget(self, action: action, for: .touchUpInside)
-        return UIBarButtonItem(customView: newButton)
         
+        /// Set Icon
+        newButton.setBackgroundImage(UIImage(named: icon), for: .normal)
+        
+        /// Set button action
+        newButton.addTarget(self, action: action, for: .touchUpInside)
+        
+        return UIBarButtonItem(customView: newButton)
     }
 }
