@@ -17,7 +17,7 @@ class ViewController: UIViewController, WKUIDelegate {
         super.viewDidLoad()
         
         webView = WKWebView(frame: CGRect(x: 0,
-                                          y: 0,
+                                          y: UIApplication.shared.windows[0].safeAreaInsets.top,
                                           width: self.view.bounds.size.width,
                                           height: self.view.bounds.size.height))
         
