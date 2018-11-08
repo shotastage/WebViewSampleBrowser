@@ -33,19 +33,19 @@ extension ViewController {
         toolbar.tintColor = UIColor.white
         
         /// back
-        let backBtn = provideToolbarItem(icon: "back", action: #selector(back))
+        let backButton = provideToolbarItem(icon: "back", action: #selector(back))
         
         /// forward
-        let forwardBtn = provideToolbarItem(icon: "forward", action: #selector(forward))
+        let forwardButton = provideToolbarItem(icon: "forward", action: #selector(forward))
         
         /// share
-        let tabBtn = provideToolbarItem(icon: "back", action: #selector(share))
+        let tabButton = provideToolbarItem(icon: "back", action: #selector(share))
         
         /// spacer
         let flexibleItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
     
         /// Toolbar Items
-        toolbar.items = [backBtn, flexibleItem, forwardBtn, flexibleItem, flexibleItem, tabBtn]
+        toolbar.items = [backButton, flexibleItem, forwardButton, flexibleItem, flexibleItem, tabButton]
         
         self.view.addSubview(toolbar)
     }
