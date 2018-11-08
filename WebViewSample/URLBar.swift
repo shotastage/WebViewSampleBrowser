@@ -11,16 +11,22 @@ import UIKit
 
 extension ViewController {
     
-    func provideURLBar() {
-        let bar: UIInputView!
+    func provideURLBar(height: CGFloat) {
         
-        bar = UIInputView(frame: CGRect(
-            x: 0, y: 0,
+        let bar: UINavigationBar!
+        
+        bar = UINavigationBar(frame: CGRect(
+            x: 0, y: UIApplication.shared.windows[0].safeAreaInsets.top,
             width: self.view.bounds.width,
-            height: 20
+            height: height
         ))
         
-        self.view.bringSubviewToFront(bar)
+        bar.backgroundColor = .red
+        bar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Times New Roman", size: 15)!]
+
+    
+        
+        self.view.addSubview(bar)
     }
 
 }

@@ -17,6 +17,7 @@
 		25C4DAB3219285A4004116DD /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C4DAB2219285A4004116DD /* Toolbar.swift */; };
 		25C4DAB5219285CE004116DD /* URLBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C4DAB4219285CE004116DD /* URLBar.swift */; };
 		25F01F7E219407FB0025107E /* ActivityMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F01F7D219407FB0025107E /* ActivityMenu.swift */; };
+		25F01F8021940B780025107E /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F01F7F21940B780025107E /* CustomNavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		25C4DAB2219285A4004116DD /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 		25C4DAB4219285CE004116DD /* URLBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBar.swift; sourceTree = "<group>"; };
 		25F01F7D219407FB0025107E /* ActivityMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityMenu.swift; sourceTree = "<group>"; };
+		25F01F7F21940B780025107E /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				25C4DAB2219285A4004116DD /* Toolbar.swift */,
 				25C4DAB4219285CE004116DD /* URLBar.swift */,
 				25F01F7D219407FB0025107E /* ActivityMenu.swift */,
+				25F01F7F21940B780025107E /* CustomNavigationBar.swift */,
 			);
 			path = WebViewSample;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25F01F8021940B780025107E /* CustomNavigationBar.swift in Sources */,
 				25C4DAB3219285A4004116DD /* Toolbar.swift in Sources */,
 				25326008219203EC0004264C /* ViewController.swift in Sources */,
 				25326006219203EC0004264C /* AppDelegate.swift in Sources */,

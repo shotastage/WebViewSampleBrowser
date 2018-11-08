@@ -9,15 +9,18 @@
 import UIKit
 import WebKit
 
+
 class ViewController: UIViewController, WKUIDelegate {
 
     private var webView: WKWebView!
+    
+    private var urlBarHeight: CGFloat = 50
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         webView = WKWebView(frame: CGRect(x: 0,
-                                          y: UIApplication.shared.windows[0].safeAreaInsets.top,
+                                          y: urlBarHeight + UIApplication.shared.windows[0].safeAreaInsets.top,
                                           width: self.view.bounds.size.width,
                                           height: self.view.bounds.size.height))
         
@@ -35,7 +38,7 @@ class ViewController: UIViewController, WKUIDelegate {
         
         
         self.view.addSubview(webView)
-        provideURLBar()
+        provideURLBar(height: urlBarHeight)
         provideToolbar()
     }
 
