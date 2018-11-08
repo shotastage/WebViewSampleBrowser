@@ -61,14 +61,6 @@ extension ViewController {
     
     @objc func share(sender: UIButton) {
         // Share
-        let alert: UIAlertController = UIAlertController(title: "Fatal error", message: "Does not implemented!", preferredStyle:  UIAlertController.Style.alert)
-        
-        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
-            (action: UIAlertAction!) -> Void in
-        })
-        
-        alert.addAction(defaultAction)
-        
-        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+        provideShareMenu(url: webView.url!)
     }
 }
