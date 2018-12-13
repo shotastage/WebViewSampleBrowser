@@ -11,6 +11,7 @@ import UIKit
 
 class CustomNavigationBar: UIView {
     
+    var cornerRadius: CGFloat = 8
     
     init() {
         super.init(frame: CGRect(
@@ -37,6 +38,15 @@ class CustomNavigationBar: UIView {
     
     private func provideDefaultAppearance() {
         self.backgroundColor = .white
-        self.clipsToBounds = true
+        
+        if cornerRadius != 0 {
+            let maskPath = UIBezierPath(roundedRect: bounds,
+                                        byRoundingCorners: [.topLeft, .topRight],
+                                        cornerRadii: CGSize(width: cornerRadius, height: cornerRadius))
+            let maskLayer = CAShapeLayer()
+            maskLayer.frame = bounds
+            maskLayer.path = maskPath.cgPath
+            layer.mask = maskLayer
+        }
     }
 }

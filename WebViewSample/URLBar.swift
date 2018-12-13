@@ -13,19 +13,18 @@ extension ViewController {
     
     func provideURLBar(height: CGFloat) {
         
-        let bar: UINavigationBar!
+        let bar: CustomNavigationBar!
         
-        bar = UINavigationBar(frame: CGRect(
+        bar = CustomNavigationBar(frame: CGRect(
             x: 0, y: UIApplication.shared.windows[0].safeAreaInsets.top,
             width: self.view.bounds.width,
             height: height
         ))
         
         bar.backgroundColor = .red
-        bar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Times New Roman", size: 15)!]
+        // bar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Times New Roman", size: 15)!]
 
     
-        
         self.view.addSubview(bar)
     }
 

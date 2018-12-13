@@ -28,6 +28,22 @@ class WebViewSampleTests: XCTestCase {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
+            let status: Bool = (0 == 0)
+            
+            if status {
+                print("LOG: ", "YES!")
+            }
+        }
+    }
+    
+    
+    func testPerformanceIF() {
+        self.measure {
+            // Put the code you want to measure the time of here.
+            
+            if 0 == 0 {
+                print("LOG: ", "YES!")
+            }
         }
     }
 
