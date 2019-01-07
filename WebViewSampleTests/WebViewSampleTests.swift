@@ -3,7 +3,7 @@
 //  WebViewSampleTests
 //
 //  Created by Shota Shimazu on 2018/11/07.
-//  Copyright © 2018 Shota Shimazu. All rights reserved.
+//  Copyright © 2018-2019 Shota Shimazu. All rights reserved.
 //
 
 import XCTest
