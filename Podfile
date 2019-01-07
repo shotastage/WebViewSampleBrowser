@@ -6,7 +6,7 @@ target 'WebViewSample' do
   use_frameworks!
 
   # Pods for WebViewSample
-  pod 'YogaKit', '~> 1.7'
+  pod 'YogaKit', '~> 1.9'
 
 
   target 'WebViewSampleTests' do
